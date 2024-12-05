@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generated SSH Keys</title>
+</head>
+<body>
+    <h1>Generated SSH Keys</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Key Type</th>
+            <th>Public Key</th>
+        </tr>
+        {% for id, key_type, public_key in keys %}
+        <tr>
+            <td>{{ id }}</td>
+            <td>{{ key_type }}</td>
+            <td><pre>{{ public_key }}</pre></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('index') }}">Generate New Key</a>
+</body>
+</html>
